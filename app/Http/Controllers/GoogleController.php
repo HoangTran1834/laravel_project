@@ -15,15 +15,14 @@ class GoogleController extends Controller
 
         try {      
             $google_user = Socialite::driver("google")->user();
-
-            $user = User::where('provider_id', $google_user->id)->first();
+            $user = User::where('email', $google_user->email)->first();
             
         if (!$user) {
             $data = [
                 'role_id' => 2,
-                'provider_id' => $google_user->id,
+                'google_id' => $google_user->id,
                 'name' => $google_user->name,
-                'email' => $google_user->id . $google_user->email,
+                'email' => $google_user->email,
             ];
 
             $userConnected = User::create($data);

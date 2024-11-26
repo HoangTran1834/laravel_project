@@ -59,7 +59,7 @@
                             <a class="nav-link" href="{{ route('seller.orders.index') }}">Your Shop</a>
                         </li>
                         @endif
-                        <li><a href="#"><i class="pe-7s-users"></i>{{ Auth::user()->name }}</a></li>
+                        <li><a href="#"><i class="pe-7s-users"></i>{{ Auth::check() ? Auth::user()->name : 'Guest' }}</a></li>
                         {{-- <li><a data-toggle="modal" data-target="#exampleCompare" href="#"><i
                                     class="pe-7s-repeat"></i>Compare</a></li>
                         <li><a href="wishlist.html"><i class="pe-7s-like"></i>Wishlist</a></li> --}}

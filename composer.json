@@ -12,6 +12,7 @@
         "anhskohbo/no-captcha": "^3.5",
         "darryldecode/cart": "^4.1",
         "fideloper/proxy": "^4.0",
+        "google/apiclient": "*",
         "laravel/framework": "^8.0",
         "laravel/legacy-factories": "^1.1",
         "laravel/socialite": "^5.16",

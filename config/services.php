@@ -31,9 +31,9 @@ return [
     ],
 
     'google' => [
-        'client_id' => env('GOOGLE_CLIENT_ID'),
-        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect' => env('APP_URL') . '/auth/google/callback'
+       'client_id' => '894768458018-uvf5i5lutkdpr1pi8m1alcvh8ni9ldur.apps.googleusercontent.com',
+        'client_secret' => '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',
+        'redirect' => 'http://127.0.0.1:8000/auth/google/callback'
     ],
     // 'facebook' => [
     //     'client_id' => env('FACEBOOK_CLIENT_ID'),
@@ -42,8 +42,8 @@ return [
     // ],
 
     'github' => [
-        'client_id' => env('GITHUB_CLIENT_ID'),
-        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'client_id' => ('Ov23ctaBSNBAcEXWG7Sf'),
+        'client_secret' => ('b0e33da32480a8ce8661eb80a91598e518fdce5e'),
         'redirect' => ('http://127.0.0.1:8000/auth/github/callback')
     ],
 ];
