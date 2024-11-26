@@ -14,16 +14,15 @@ class GithubController extends Controller
     public function callbackGithub() {
 
         try {      
-            $github_user = Socialite::driver('github')->user();
-
+            $github_user = Socialite::driver('github')->user(); 
             $user = User::where('email', $github_user->email)->first();
             
         if (!$user) {
             $data = [
                 'role_id' => 2,
-                'github_id' => $github_user->id,
                 'name' => $github_user->name,
                 'email' => $github_user->email,
+                'github_id' => $github_user->id,
             ];
 
             $userConnected = User::create($data);
