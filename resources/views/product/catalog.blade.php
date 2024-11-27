@@ -3,22 +3,7 @@
 
 @section('content')
 
-
-<div class="breadcrumb-area pt-205 breadcrumb-padding pb-210"
-    style="background-image: url(/assets/img/bg/search_result.png)">
-    <div class="container-fluid">
-        <div class="breadcrumb-content text-center">
-            <h2 style="color: #dadada;">Product Search"</h2>
-            <ul>
-                <li><a href="#">home</a></li>
-                <li>Product Search</li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-
-<div class="shop-page-wrapper shop-page-padding ptb-100">
+<div class="shop-page-wrapper shop-page-padding ptb-10">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-3">

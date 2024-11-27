@@ -101,11 +101,7 @@
                                     Sign in with Google
                                 </a>
                             </button>
-                            <button type="button" class="facebook-sign-in-button" >
-                            <a href="">
-                                Sign in with Facebook
-                            </a>
-                            </button>
+                         
                             <button type="button" class="github-sign-in-button" >
                                 <a href="{{ route('github-auth') }}">
                                     Sign in with Github

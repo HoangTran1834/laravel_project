@@ -31,7 +31,7 @@
                         <span>${{$product->price}}</span>
                     </div>
                     <p>{!! $product->description !!}</p>
-
+                    <p>Seller: {{$product->shop->owner->name ?? 'n/a'}}</p>
                     <div class="quickview-plus-minus">
 
                         <div class="quickview-btn-cart">

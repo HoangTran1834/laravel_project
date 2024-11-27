@@ -2,12 +2,12 @@
 
 @section('content')
 
-<div class="pl-200 pr-200 overflow clearfix">
-    <div class="categori-menu-slider-wrapper clearfix">
-        <div class="categories-menu">
+<div class="pl-200 pr-200 overflow clearfix" >
+    <div class="categori-menu-slider-wrapper clearfix" >
+        <div class="categories-menu" >
 
             <div class="category-heading">
-                    <a href="{{route('products.index')}}"> All Products 
+                    <a href="{{route('products.index')}}" style="background:#0A5EB0"> All Products 
                     </a>
             </div>
 
@@ -17,7 +17,7 @@
 
         <div class="menu-slider-wrapper">
 
-            <div class="menu-style-3 menu-hover text-center">
+            <div class="menu-style-3 menu-hover text-center"  style="background:#0A5EB0">
                 @include('_navbar')
             </div>
 

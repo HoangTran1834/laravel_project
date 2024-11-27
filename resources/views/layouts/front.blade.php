@@ -41,8 +41,8 @@
             <div class="header-info-wrapper pl-200 pr-200">
                 <div class="header-contact-info">
                     <ul>
-                        <li><i class="pe-7s-call"></i> +0788024737</li>
-                        <li><i class="pe-7s-mail"></i> <a href="#">darkteam@gmail.com</a></li>
+                        <li><i class="pe-7s-call"></i> +0868686868</li>
+                        <li><i class="pe-7s-mail"></i> <a href="#">finalteam@gmail.com</a></li>
                     </ul>
                     <ul class="navbar-nav mr-auto">
 
@@ -65,10 +65,11 @@
                         <li><a href="wishlist.html"><i class="pe-7s-like"></i>Wishlist</a></li> --}}
 
                         @auth
-                        <li>
+                        <li >
                             <form action=" {{ url('/logout') }} " method="POST">
                                 @csrf
                                 <input style="cursor: pointer;" type="submit" value="Logout" />
+                                
                             </form>
                         </li>
                         @else
@@ -117,18 +118,18 @@
                             <a href="{{ route('cart.index') }}"><i class="pe-7s-cart"></i></a>
                         </div>
                         <div class="same-style-text">
-                            <a href="{{ route('cart.index') }}">My Cart <br>
+                            <a href="{{ route('cart.index') }}" style=" color:red; position: absolute; right:85px;top:85px; "> <br>
                                 @auth
                                 {{Cart::session(auth()->id())->getContent()->count()}}
                                 @else
                                 0
                                 @endauth
-                                Item</a>
+                                </a>
                         </div>
                     </div>
                 </div>
-                <div class="mobile-menu-area electro-menu d-md-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none">
-                    <div class="mobile-menu">
+                <div class="mobile-menu-area electro-menu d-md-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none" style="background:#0A5EB0">
+                    <div class="mobile-menu" style="background:#0A5EB0">
                         <nav id="mobile-menu-active">
                             <ul class="menu-overflow">
                                 <li><a href="{{url('/')}}">HOME</a>
@@ -513,8 +514,154 @@
         </div>
     </div>
 
+<!-- chat box -->
+<div id="chat-box" class="chat-box hidden">
+    <div class="chat-header">
+        <div class="chat-header-icon">
+            <div class="user-icon"></div>
+            <span>Username</span>
+        </div>
+        <button id="close-chat" class="close-btn">&times;</button>
+    </div>
+    <div class="chat-body">
+        <div class="message user-message">Hello</div>
+        <div class="message my-message">Hi!</div>
+    </div>
+    <div class="chat-footer">
+        <input type="text" placeholder="Enter your text..." />
+        <button class="send-btn">Send</button>
+    </div>
+</div>
+<div id="chat-toggle" class="chat-toggle">
+<span id="bling" class="bling hidden"></span>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chat" viewBox="0 0 16 16">
+  <path d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105"/>
+</svg>
+
+</div>
+<style>
+  
+.chat-box {
+    position: fixed;
+    top: 160px;
+    right: 80px;
+    width: 300px;
+    height: 350px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+    z-index: 999;
+}
+
+.hidden {
+    transform: translateY(200%);
+}
+
+.chat-header {
+    background-color: #4285f4;
+    color: white;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header-icon {
+    display: flex;
+    align-items: center;
+}
+
+.user-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #4caf50;
+    margin-right: 10px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.user-message {
+    background: #e0e0e0;
+    align-self: start;
+    margin-right: 60px;
+}
+
+.my-message {
+    background: #4285f4;
+    color: white;
+    align-self: end;
+    margin-left: 60px;
+}
+
+.chat-footer {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.chat-footer input {
+    flex: 1;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 10px;
+    background: #f0f0f0;
+}
+
+.send-btn {
+    background: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.chat-toggle {
+    position: fixed;
+    bottom: 220px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.chat-icon {
+    font-size: 24px;
+}
 
 
+</style>
 
 
     <!-- all js here -->
@@ -530,6 +677,7 @@
     <script src="/assets/js/owl.carousel.min.js"></script>
     <script src="/assets/js/plugins.js"></script>
     <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/boxchat.js"></script>
 
     @livewireScripts
 </body>

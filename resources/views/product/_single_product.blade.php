@@ -29,10 +29,10 @@
                 <i class="icofont icofont-star yellow"></i>
                 <i class="icofont icofont-star"></i>
             </div>
-            <h4><a href="{{route('products.show', $product)}}">{{$product->name}}</a></h4>
-            <div>{{$product->description}}</div>
+            <h4><a href="{{route('products.show', $product)}}" class"text-truncate" style="white-space: nowrap; overflow: hidden;">{{$product->name}}</a></h4>
+            <div class="text-truncate" style="white-space: nowrap; overflow: hidden;">{{$product->description}}</div>
             <h5>$ {{$product->price}}</h5>
-        <p>{{$product->shop->owner->name ?? 'n/a'}}</p>
+       
         </div>
     </div>
 </div>

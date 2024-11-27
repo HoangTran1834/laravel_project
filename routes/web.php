@@ -16,6 +16,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\GithubController;
 use Srmklive\PayPal\Facades\PayPal;
+use App\Http\Controllers\ChatController;
 // use App\Http\Controllers\FacebookController;
 
 Route::redirect('/', '/home');
@@ -32,6 +33,8 @@ Auth::routes([
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 
+
+Route::get('/chat', 'ChatController@index');
 
 Route::get('/products/search', 'ProductController@search')->name('products.search');
 Route::get('/products/sortASC', 'ProductController@sortASC')->name('products.sortASC');
