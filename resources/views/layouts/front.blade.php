@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>E-Commerce Website</title>
+    <title>TopZone</title>
     <link rel="icon" type="image/png" sizes="96x96" href="/public/assets/img/logo/android-icon-96x96.png">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
