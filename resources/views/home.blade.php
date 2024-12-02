@@ -4,34 +4,32 @@
 
 <div class="pl-200 pr-200 overflow clearfix" >
     <div class="categori-menu-slider-wrapper clearfix" >
-        <div class="categories-menu" >
-
-            <div class="category-heading">
-                    <a href="{{route('products.index')}}" style="background:#0A5EB0"> All Products 
-                    </a>
-            </div>
-
-            @include('_category-list')
-
-        </div>
+        
 
         <div class="menu-slider-wrapper">
-
-            <div class="menu-style-3 menu-hover text-center"  style="background:#0A5EB0">
-                @include('_navbar')
-            </div>
-
             <div class="slider-area">
                 @include('_slider')
             </div>
-
+           
+ <div style="position:absolute; top:110px; left:65%; z-index:1">
+      <img src="/assets/img/slider/saler.png" alt="" style="width:460px">
+</div>
         </div>
-
     </div>
 
 </div>
 
 <div class="electronic-banner-area">
+<div class="categories-menu" >
+
+<div class="category-heading">
+        <a href="{{route('products.index')}}" style="background:#0A5EB0"> All Products 
+        </a>
+</div>
+
+@include('_category-list')
+
+</div>
     <div class="custom-row-2">
         @include('_dummy-product')
         @include('_dummy-product')
@@ -45,7 +43,7 @@
     <div class="container-fluid">
 
         <div class="section-title-4 text-center mb-40">
-            <h2>Top Products</h2>
+            <h2>TopZone Products</h2>
         </div>
 
         <div class="top-product-style">
