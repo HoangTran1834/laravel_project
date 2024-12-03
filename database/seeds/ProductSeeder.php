@@ -1,26 +1,17 @@
 <?php
 
-namespace Database\Seeders;
-
-use App\Shop;
-use App\Product;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
-class DummyDataSeeder extends Seeder
+class ProductSeeder extends Seeder
 {
+
     /**
-     * Run the database seeds.
+     * Auto generated seed file
      *
      * @return void
      */
     public function run()
     {
-
-        //seller
-        $shop1 = factory(Shop::class)->create(['user_id' => 4]);
-        $shop2 = factory(Shop::class)->create(['user_id' => 5]);
-
         // Xóa dữ liệu cũ
         \DB::table('products')->delete();
         // DB::table('products')->truncate();
@@ -113,3 +104,4 @@ class DummyDataSeeder extends Seeder
         DB::table('products')->insert($products);
     }
 }
+

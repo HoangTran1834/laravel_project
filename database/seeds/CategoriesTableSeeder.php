@@ -80,5 +80,6 @@ class CategoriesTableSeeder extends Seeder
         ));
         
         
+        
     }
 }
