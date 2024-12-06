@@ -43,7 +43,7 @@
                 <ul>
                         @if (auth()->guard('web')->user() && auth()->guard('web')->user()->role_id == 2)
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('shops.create') }} style="color: #fff;"">Seller Channel</a>
+                        <a class="nav-link" href="{{ route('shops.create') }} style="color: #fff;"">Seller Channel</a>
                         </li>
                         @else
                         <li class="nav-item">

@@ -67,11 +67,11 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-                        <div class="form-group mb-3 card-body-recaptcha">
+                        <!-- <div class="form-group mb-3 card-body-recaptcha">
                             <strong>Google recaptcha :</strong>
                             {!! NoCaptcha::renderJs() !!}
                             {!! NoCaptcha::display() !!}
-                        </div>
+                        </div> -->
                         <div class="form-group row mb-0">
                             <div class="col-md-10 offset-md-2">
                                 <button type="submit" class="btn btn-primary">
